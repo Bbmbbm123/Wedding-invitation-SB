@@ -8,16 +8,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&amp;family=Great+Vibes&amp;family=Noto+Serif+Devanagari:wght@600&amp;display=swap">
 <noscript><style>#zip{display:none}html.lock{overflow:auto}</style></noscript>
 <style>
-:root{--bg1:#fff5f2;--bg2:#fbdcd6;--ink:#6a2e28;--gold:#9c7220;--gold2:#e0bf62;--card:rgba(255,255,255,.6);--f1:#f8dcd7;--f2:#e5b3ad;--sc:'Great Vibes','Allura',cursive;--se:'Cormorant Garamond',Georgia,serif;--mx:0;--my:0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2d161a;--bg2:#1a0b0e;--ink:#f6e2da;--gold:#e5c46c;--gold2:#f6e3a6;--card:rgba(255,255,255,.07);--f1:#4a2229;--f2:#2c1015}}
-:root[data-theme="dark"]{--bg1:#2d161a;--bg2:#1a0b0e;--ink:#f6e2da;--gold:#e5c46c;--gold2:#f6e3a6;--card:rgba(255,255,255,.07);--f1:#4a2229;--f2:#2c1015}
+:root{--bg1:#fff4f7;--bg2:#f9cddb;--ink:#6a2e28;--gold:#9c7220;--gold2:#e0bf62;--card:rgba(255,255,255,.6);--f1:#ffe3ec;--f2:#f6b4c9;--sc:'Great Vibes','Allura',cursive;--se:'Cormorant Garamond',Georgia,serif;--mx:0;--my:0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}html.lock{overflow:hidden}
 *{box-sizing:border-box}
 body{margin:0;height:100%;overflow:hidden;background:linear-gradient(var(--bg1),var(--bg2));color:var(--ink);font:500 clamp(18px,4.8vw,22px)/1.6 var(--se);font-variant-numeric:lining-nums;-webkit-tap-highlight-color:transparent}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 /* book */
 #bk{position:fixed;inset:0;perspective:2000px;touch-action:none;overflow:hidden}
-.pg{position:absolute;inset:0;z-index:calc(9 - var(--n));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;visibility:hidden;padding:calc(44px + env(safe-area-inset-top,0px)) 26px calc(104px + env(safe-area-inset-bottom,0px));transform-origin:0 50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:radial-gradient(60vmax 60vmax at 8% 12%,rgba(240,150,150,.3),transparent 60%),radial-gradient(55vmax 55vmax at 95% 85%,rgba(255,190,170,.32),transparent 60%),linear-gradient(var(--bg1),var(--bg2));transition:transform 1.25s cubic-bezier(.65,0,.2,1),visibility 0s 1.25s}
+.pg{position:absolute;inset:0;z-index:calc(9 - var(--n));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;visibility:hidden;padding:calc(44px + env(safe-area-inset-top,0px)) 26px calc(104px + env(safe-area-inset-bottom,0px));transform-origin:0 50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:radial-gradient(60vmax 60vmax at 8% 12%,rgba(255,140,180,.28),transparent 60%),radial-gradient(55vmax 55vmax at 95% 85%,rgba(255,170,200,.32),transparent 60%),linear-gradient(var(--bg1),var(--bg2));transition:transform 1.25s cubic-bezier(.65,0,.2,1),visibility 0s 1.25s}
 .pg.on{z-index:10;visibility:visible;transition-delay:0s}
 .pg.out{z-index:calc(20 + var(--n));transform:rotateY(-104deg)}
 .pg.mv{visibility:visible}
@@ -36,7 +34,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .btn{position:relative;overflow:hidden;display:inline-block;margin-top:26px;padding:12px 30px;border:1.5px solid var(--gold);border-radius:99px;background:var(--card);color:var(--ink);font-weight:700;font-size:18px;letter-spacing:.05em;text-decoration:none;box-shadow:0 8px 20px -10px rgba(120,60,30,.5)}
 .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-120%);animation:shn 3.2s 3.5s infinite}
 @keyframes shn{60%,100%{transform:translateX(120%)}}
+/* background roses */
+.bgr{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.62}
+.br{transform-box:fill-box;transform-origin:center;animation:bob 7s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+@keyframes bob{to{transform:translateY(-10px) rotate(6deg)}}
 /* 1 blessing */
+.gz{display:block;height:clamp(84px,16svh,128px);width:auto;margin:0 auto 8px;position:relative;z-index:1;filter:drop-shadow(0 6px 8px rgba(120,60,30,.3))}
+.hl{transform-origin:60px 52px;animation:spin 26s linear infinite}
 .gn{font:600 clamp(17px,4.6vw,21px)/1.4 'Noto Serif Devanagari',var(--se);color:var(--gold);letter-spacing:.04em;margin:0 0 16px;position:relative;z-index:1}
 .ft{position:absolute;top:-8px;width:min(33vw,200px);overflow:visible;transform-origin:50% 0;animation:sway 7s ease-in-out infinite;translate:calc(var(--mx)*14px) calc(var(--my)*10px)}
 .ft.a{left:-5vw;--r:13deg}.ft.b{right:-5vw;--r:-13deg;animation-delay:-3.5s}
@@ -182,6 +186,30 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <article class="pg s1 on" style="--n:0">
 <svg class="ft a" viewBox="0 0 120 360" aria-hidden="true"><use href="#fe"/></svg>
 <svg class="ft b" viewBox="0 0 120 360" aria-hidden="true"><use href="#fe" transform="translate(120 0) scale(-1 1)"/></svg>
+<svg class="gz r" viewBox="0 0 120 136" aria-label="Lord Ganesha" role="img">
+<circle class="hl" cx="60" cy="52" r="46" fill="none" stroke="var(--gold)" stroke-width="1.4" stroke-dasharray="2 5"/>
+<circle cx="60" cy="52" r="40" fill="none" stroke="var(--gold)" stroke-width=".8" opacity=".6"/>
+<g stroke="#8c6618" stroke-width="1.2" stroke-linejoin="round">
+<ellipse cx="60" cy="106" rx="31" ry="25" fill="url(#gg)"/>
+<ellipse cx="31" cy="52" rx="17" ry="23" fill="url(#gg)" transform="rotate(10 31 52)"/>
+<ellipse cx="89" cy="52" rx="17" ry="23" fill="url(#gg)" transform="rotate(-10 89 52)"/>
+<ellipse cx="31" cy="52" rx="9" ry="15" fill="#f6a9b3" stroke="none" opacity=".55" transform="rotate(10 31 52)"/>
+<ellipse cx="89" cy="52" rx="9" ry="15" fill="#f6a9b3" stroke="none" opacity=".55" transform="rotate(-10 89 52)"/>
+<ellipse cx="60" cy="52" rx="24" ry="26" fill="url(#gg)"/>
+<path d="M43 32L46 10L53 24L60 4L67 24L74 10L77 32Z" fill="url(#gg)"/>
+<ellipse cx="34" cy="106" rx="9" ry="13" fill="url(#gg)" transform="rotate(25 34 106)"/>
+<ellipse cx="86" cy="106" rx="9" ry="13" fill="url(#gg)" transform="rotate(-25 86 106)"/>
+<ellipse cx="60" cy="130" rx="40" ry="7" fill="url(#gg)"/>
+</g>
+<ellipse cx="30" cy="116" rx="6" ry="4.5" fill="#f6a9b3" stroke="#8c6618" stroke-width="1"/>
+<circle cx="60" cy="30" r="2.6" fill="#d9566e"/>
+<circle cx="52" cy="46" r="2.3" fill="#3a1c10"/><circle cx="68" cy="46" r="2.3" fill="#3a1c10"/>
+<path d="M60 56C60 80 56 92 44 94" fill="none" stroke="#8c6618" stroke-width="13" stroke-linecap="round"/>
+<path d="M60 56C60 80 56 92 44 94" fill="none" stroke="url(#gg)" stroke-width="10.5" stroke-linecap="round"/>
+<path d="M70 64C79 68 82 76 78 84C76 78 72 74 68 72Z" fill="#fff6dc" stroke="#8c6618" stroke-width=".8"/>
+<path d="M60 74a10 10 0 0 1 8 6" fill="none" stroke="#8c6618" stroke-width="1" opacity=".5"/>
+<path d="M46 98C52 104 68 104 74 98" fill="none" stroke="#8c6618" stroke-width="1.2" opacity=".6"/>
+</svg>
 <p class="gn r">॥ श्री गणेशाय नमः ॥</p>
 <p class="sc big" data-w>Two souls, one heart.</p>
 <p class="sc mid" data-w style="--o:1.2s">Seven steps, seven vows, one lifetime together.</p>
@@ -252,6 +280,10 @@ let h='';
 [[110,112,-150],[84,132,-172],[38,140,-160],[290,112,-30],[316,132,-8],[362,140,-20],[168,84,-118],[232,84,-62],[200,74,-90],[24,120,-120],[376,120,-60]].forEach(([x,y,a],i)=>h+=`<g transform="translate(${x} ${y}) rotate(${a})"><g class="lf" style="--i:${i}"><path d="M0 0C10-15 34-15 48 0C34 15 10 15 0 0Z" fill="url(#lg)"/><path d="M3 0H44" stroke="#3f6d49" stroke-width="1"/></g></g>`);
 [[128,124,64],[272,124,64],[62,140,50],[338,140,50],[200,112,80]].forEach(([x,y,s],i)=>h+=`<g transform="translate(${x} ${y})"><g class="rz" style="--i:${i}"><use href="#rs" x="${-s/2}" y="${-s/2}" width="${s}" height="${s}"/></g></g>`);
 $('#gar').innerHTML=h;
+/* background roses on the pink pages */
+let bg='';
+[[34,70,130,0],[372,40,100,1.5],[366,330,140,.8],[22,470,120,2.2],[376,650,130,1],[40,764,120,.4],[205,790,90,1.8],[210,14,84,2.6]].forEach(([x,y,s,d])=>bg+=`<g transform="translate(${x} ${y})"><g class="br" style="--d:-${d}s"><ellipse cx="${-s*.52}" cy="${s*.14}" rx="${s*.3}" ry="${s*.1}" transform="rotate(-28 ${-s*.52} ${s*.14})" fill="url(#lg)"/><ellipse cx="${s*.52}" cy="${s*.14}" rx="${s*.3}" ry="${s*.1}" transform="rotate(28 ${s*.52} ${s*.14})" fill="url(#lg)"/><use href="#rs" x="${-s/2}" y="${-s/2}" width="${s}" height="${s}"/></g></g>`);
+$$('.pg:not(.s5)').forEach(p=>p.insertAdjacentHTML('afterbegin',`<svg class="bgr" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${bg}</svg>`));
 /* state */
 const pg=[...$$('.pg')],dots=$('#dt'),pv=$('#pv'),nx=$('#nx'),bk=$('#bk'),z=$('#zip'),pl=$('#pull'),zs=z.style;
 let cur=0,busy=0,ds=null,y=0,s0=0,mx=1,dg=0,sy=0,y0=0,mv=0,fn=0,W=0,H=0,lt=0,lg=0,hx=0,py=0,pa=0,pw=0;
@@ -324,8 +356,8 @@ function blessing(){if(!ok())return;for(let k=0;k<9;k++)harp(mf(PS[k+4]),k*.065,
 sd.onclick=e=>{e.stopPropagation();if(!AC){au();setTimeout(()=>{if(ok())bell(SC[2],0,.12)},200);if(B.classList.contains('go'))music();return}mu=!mu;sd.classList.toggle('mu',mu);MG.gain.setTargetAtTime(mu?0:.9,AC.currentTime,.05)};
 document.addEventListener('visibilitychange',()=>{if(AC)document.hidden?AC.suspend():AC.resume()});
 z.addEventListener('pointerup',e=>{au();if(!e.target.closest('#pull')){burst(e.clientX,e.clientY,12,1);spark()}});
-/* finale: looping fireworks + fountain show on the last page */
-const fwc=$('#fw'),fx=fwc.getContext('2d'),HU=[350,42,30,330,45,200,280,140],FF=[{x:.12,o:0},{x:.88,o:1.2}];
+/* finale: looping firecracker / fireworks show on the last page */
+const fwc=$('#fw'),fx=fwc.getContext('2d'),HU=[350,42,30,330,45,200,280,140];
 let FR=[],FS=[],FL=[],fon=0,fq=0,ft=0,fu=0,fid=0,fto=0,fn2=0;
 function fz(){const d=Math.min(devicePixelRatio||1,2);fwc.width=W*d;fwc.height=H*d;fx.setTransform(d,0,0,d,0,0)}
 function fsn(){if(!ok())return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.frequency.setValueAtTime(95,t);o.frequency.exponentialRampToValueAtTime(32,t+.7);g.gain.setValueAtTime(.3,t);g.gain.exponentialRampToValueAtTime(.0001,t+.8);o.connect(g);g.connect(MG);o.start(t);o.stop(t+.9);nz(0,.7,300,6000,.25,.6);for(let i=0;i<5;i++)nz(.25+i*.08+Q()*.1,.05,3000+Q()*2000,4500,.07,3)}
@@ -343,9 +375,6 @@ for(let i=FR.length-1;i>=0;i--){const r=FR[i];r.vy+=r.g*k;r.x+=r.vx*k;r.y+=r.vy*
 FS.push({x:r.x,y:r.y,px:r.x,py:r.y,vx:(Q()-.5)*.5,vy:.5+Q()*.6,h:38,l:.45,L:.45,g:.03,dr:.95,s:1.2});
 fx.strokeStyle='#ffe9b0';fx.lineWidth=2.4;fx.beginPath();fx.moveTo(r.x-r.vx*2,r.y-r.vy*2);fx.lineTo(r.x,r.y);fx.stroke();
 if(r.vy>-1.4){FR.splice(i,1);ex(r.x,r.y)}}
-for(const o of FF){const p=fon?Math.max(0,Math.min(1,Math.sin(fu*.7+o.o)*2+.3)):0,bx=W*o.x,by=H-80;
-if(p>0){const g=fx.createRadialGradient(bx,by,0,bx,by,70);g.addColorStop(0,`rgba(255,190,90,${.35*p})`);g.addColorStop(1,'rgba(255,150,40,0)');fx.fillStyle=g;fx.fillRect(bx-70,by-70,140,140);
-for(let m=p*4.5*k;m>0;m--)if(m>=1||Q()<m){const v=Math.sqrt(.36*H*(.22+Q()*.14)),a=(Q()-.5)*.55;FS.push({x:bx,y:by,px:bx,py:by,vx:Math.sin(a)*v,vy:-Math.cos(a)*v,h:36+Q()*16,l:.8+Q()*.4,L:1.2,g:.18,dr:.99,s:1.3})}}}
 for(let i=FS.length-1;i>=0;i--){const s=FS[i],d=Math.pow(s.dr,k);s.px=s.x;s.py=s.y;s.vx*=d;s.vy=s.vy*d+s.g*k;s.x+=s.vx*k;s.y+=s.vy*k;s.l-=k/60;
 if(s.l<=0||s.y>H+20){FS.splice(i,1);continue}
 const ra=s.l/s.L,al=Math.min(1,ra*2)*(ra<.3&&Q()<.4?.2:1);
